@@ -1,52 +1,149 @@
 import "./Portfolio.css";
+import { Check, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Enterprise CRM Platform",
-    category: ["Enterprise", "Cloud"],
-    image: "/projects/crm.jpg",
+    badge: "Enterprise Application",
+    title: "HRMS",
+    subtitle: "Human Resource Management System",
+
     description:
-      "Cloud-native CRM platform with AI automation, analytics and customer engagement.",
-    stats: [
-      { value: "250K+", label: "Users" },
-      { value: "99.99%", label: "Uptime" },
-      { value: "18", label: "Countries" },
+      "Complete HR management solution designed to streamline employee onboarding, attendance, payroll, leave management, recruitment and performance evaluation for organizations.",
+
+    tech: [
+      "React",
+      ".NET Core",
+      "SQL Server",
+      "REST APIs",
     ],
-    tech: ["React", "Node.js", "AWS"],
+
+    features: [
+      "Employee Management",
+      "Attendance & Leave",
+      "Payroll Automation",
+      "Performance Tracking",
+    ],
   },
 
   {
-    title: "Healthcare AI Dashboard",
-    category: ["Healthcare", "AI"],
-    image: "/projects/health.jpg",
+    badge: "Financial Services",
+    title: "Lakshmandeep",
+    subtitle: "Financial Services Platform",
+
     description:
-      "Real-time patient monitoring platform powered by AI-driven predictive analytics.",
-    stats: [
-      { value: "94%", label: "Accuracy" },
-      { value: "5K+", label: "Patients" },
-      { value: "<1s", label: "Latency" },
+      "Modern financial management platform developed for customer onboarding, loan processing, transaction management, document verification and financial reporting.",
+
+    tech: [
+      "React",
+      ".NET Core",
+      "SQL Server",
+      "Azure",
     ],
-    tech: ["React", "Python", "Docker"],
+
+    features: [
+      "Loan Management",
+      "EMI Tracking",
+      "Customer Profiles",
+      "Financial Reports",
+    ],
   },
 
   {
-    title: "FinTech Banking Platform",
-    category: ["Finance", "Cloud"],
-    image: "/projects/finance.jpg",
+    badge: "Healthcare",
+    title: "HIMS",
+    subtitle: "Hospital Information Management System",
+
     description:
-      "Secure banking platform supporting digital payments and intelligent fraud detection.",
-    stats: [
-      { value: "$35M", label: "Volume" },
-      { value: "24/7", label: "Support" },
-      { value: "99.9%", label: "Security" },
+      "Comprehensive healthcare platform that simplifies patient registration, appointments, pharmacy, billing, laboratory management and electronic medical records.",
+
+    tech: [
+      "React",
+      ".NET Core",
+      "SQL Server",
+      "Docker",
     ],
-    tech: ["React", "Go", "Kubernetes"],
+
+    features: [
+      "Patient Records",
+      "Appointment Scheduling",
+      "Pharmacy Management",
+      "Billing & Reports",
+    ],
+  },
+
+  {
+    badge: "Transportation",
+    title: "JustRide",
+    subtitle: "Vehicle Rental Platform",
+
+    description:
+      "Smart vehicle booking platform supporting online reservations, GPS-enabled tracking, secure payments and customer management for rental businesses.",
+
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Google Maps",
+    ],
+
+    features: [
+      "Vehicle Booking",
+      "GPS Tracking",
+      "Secure Payments",
+      "Booking History",
+    ],
+  },
+
+  {
+    badge: "Enterprise Finance",
+    title: "INRFS",
+    subtitle: "Integrated Network Resource & Finance System",
+
+    description:
+      "Enterprise-grade financial resource management platform built to streamline fund tracking, transaction management, reporting and financial analytics.",
+
+    tech: [
+      "React",
+      ".NET Core",
+      "SQL Server",
+      "REST APIs",
+    ],
+
+    features: [
+      "Financial Dashboards",
+      "Advanced Reporting",
+      "Banking API Integration",
+      "Fund Tracking",
+    ],
+  },
+
+  {
+    badge: "Retail & Fashion",
+    title: "Kapri House",
+    subtitle: "Fashion & Clothing Store Platform",
+
+    description:
+      "Modern clothing store solution featuring inventory management, online shopping, secure checkout, order tracking and customer engagement.",
+
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+    ],
+
+    features: [
+      "Inventory Management",
+      "Online Orders",
+      "Secure Payments",
+      "Order Tracking",
+    ],
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section className="portfolio">
+    <section className="portfolio" id="portfolio">
 
       <div className="section-title">
 
@@ -55,8 +152,9 @@ export default function Portfolio() {
         <h2>Projects That Create Business Impact</h2>
 
         <p>
-          Innovative products built with modern technologies,
-          enterprise architecture and AI-powered experiences.
+          We build enterprise-grade software solutions across finance,
+          healthcare, retail, transportation and HR that help businesses
+          scale with confidence.
         </p>
 
       </div>
@@ -65,65 +163,84 @@ export default function Portfolio() {
 
         {projects.map((project, index) => (
 
-          <div className="project-card" key={index}>
+          <div
+            className="project-card"
+            key={index}
+          >
 
-            <div className="image">
+            <div className="project-badge">
 
-              <img src={project.image} alt={project.title} />
-
-              <div className="overlay"></div>
+              {project.badge}
 
             </div>
 
-            <div className="content">
+            <h3>
 
-              <div className="tags">
+              {project.title}
 
-                {project.category.map((tag) => (
+            </h3>
 
-                  <span key={tag}>{tag}</span>
+            <h5>
 
-                ))}
+              {project.subtitle}
 
-              </div>
+            </h5>
 
-              <h3>{project.title}</h3>
+            <p className="project-description">
 
-              <p>{project.description}</p>
+              {project.description}
 
-              <div className="stats">
+            </p>
 
-                {project.stats.map((stat) => (
+            <div className="tech-stack">
 
-                  <div className="stat" key={stat.label}>
+              {project.tech.map((item) => (
 
-                    <h4>{stat.value}</h4>
+                <span key={item}>
 
-                    <small>{stat.label}</small>
+                  {item}
 
-                  </div>
+                </span>
 
-                ))}
+              ))}
 
-              </div>
+            </div>
 
-              <div className="bottom">
+            <div className="feature-list">
 
-                <div className="tech">
+              {project.features.map((feature) => (
 
-                  {project.tech.map((tech) => (
+                <div
+                  className="feature"
+                  key={feature}
+                >
 
-                    <span key={tech}>{tech}</span>
+                  <Check
+                    size={18}
+                    strokeWidth={2.5}
+                  />
 
-                  ))}
+                  <span>
+
+                    {feature}
+
+                  </span>
 
                 </div>
 
-                <a href="#">
-                  View Case Study →
-                </a>
+              ))}
 
-              </div>
+            </div>
+
+            <div className="project-footer">
+
+              <button>
+
+                View Project
+
+                <ArrowUpRight size={18} />
+
+              </button>
 
             </div>
 
