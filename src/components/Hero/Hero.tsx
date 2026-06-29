@@ -1,13 +1,13 @@
 import "./Hero.css";
-import {
-  Sparkles,
+import{
+    Sparkles,
   ArrowRight,
-  Cloud,
-  Cpu,
-  Database,
-  ShieldCheck,
-  Globe,
-  Smartphone,
+    BrainCircuit,
+    Code2,
+    Cloud,
+    Database,
+    ShieldCheck,
+    Server,
 } from "lucide-react";
 
 function Hero() {
@@ -32,8 +32,8 @@ function Hero() {
           </div>
 
           <h1>
-            Build Software
-            <span> That Scales Globally</span>
+            Transform Ideas
+<span>Into Digital Excellence</span>
           </h1>
 
           <p>
@@ -45,20 +45,20 @@ function Hero() {
 
           <div className="hero-buttons">
 
-            <button className="primary-btn">
-              Let's Talk
-            </button>
+<a href="#contact" className="primary-btn">
+  Let's Talk
+</a>
 
-            <button className="secondary-btn">
-              View Portfolio
-              <ArrowRight size={18} />
-            </button>
+<a href="#portfolio" className="secondary-btn">
+  View Portfolio
+  <ArrowRight size={18}/>
+</a>
 
           </div>
 
           {/* Stats */}
 
-          <div className="hero-stats">
+          {/* <div className="hero-stats">
 
             <div>
               <h2>150+</h2>
@@ -75,7 +75,7 @@ function Hero() {
               <span>Satisfaction</span>
             </div>
 
-          </div>
+          </div> */}
 
         </div>
 
@@ -90,11 +90,11 @@ function Hero() {
             <div className="orbit orbit-one">
 
               <div className="orbit-icon top">
-                <Cloud />
+                <Code2/>
               </div>
 
               <div className="orbit-icon right">
-                <ShieldCheck />
+                <Cloud/>
               </div>
 
               <div className="orbit-icon bottom">
@@ -102,7 +102,7 @@ function Hero() {
               </div>
 
               <div className="orbit-icon left">
-                <Globe />
+               <ShieldCheck/>
               </div>
 
             </div>
@@ -112,11 +112,11 @@ function Hero() {
             <div className="orbit orbit-two">
 
               <div className="orbit-icon top2">
-                <Cpu />
+                <BrainCircuit/>
               </div>
 
               <div className="orbit-icon right2">
-                <Smartphone />
+                <Server/>
               </div>
 
             </div>
@@ -131,7 +131,7 @@ function Hero() {
 
                 <h3>Belnova</h3>
 
-                <span>AI CORE</span>
+                <span>TECH CORE</span>
 
               </div>
 
@@ -139,21 +139,26 @@ function Hero() {
 
             {/* Floating Cards */}
 
-            <div className="floating-card analytics">
+<div className="floating-card analytics">
+    <h4>AI Solutions</h4>
+    <p>Machine Learning</p>
+</div>
 
-              <h4>Cloud Ready</h4>
+<div className="floating-card uptime">
+    <h4>Cloud Native</h4>
+    <p>AWS • Azure</p>
+</div>
 
-              <p>Multi Region</p>
+<div className="floating-card ai">
+    <h4>Enterprise Apps</h4>
+    <p>Web & Mobile</p>
+</div>
 
-            </div>
+<div className="floating-card uptime">
+  <h4>Cloud Solutions</h4>
+  <p>AWS • Azure • GCP</p>
+</div>
 
-            <div className="floating-card uptime">
-
-              <h4>99.9%</h4>
-
-              <p>System Uptime</p>
-
-            </div>
 
             <div className="floating-card ai">
 

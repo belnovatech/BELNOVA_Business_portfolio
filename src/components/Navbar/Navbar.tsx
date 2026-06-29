@@ -1,38 +1,42 @@
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar">
       <div className="navbar-container">
 
-        <a href="#home" className="logo">
-          <img src="/logo.png" alt="Belnova" />
+        {/* Text Logo */}
+        <a href="#home" className="logo" onClick={closeMenu}>
+          <span>Belnova</span>
+          <strong>Tech</strong>
         </a>
 
-        <nav className={menuOpen ? "nav active" : "nav"}>
-          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-          <a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a>
-          <a href="#leadership" onClick={() => setMenuOpen(false)}>Hire Developers</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        {/* Navigation */}
+        <nav className={`nav ${menuOpen ? "active" : ""}`}>
+          <a href="#home" onClick={closeMenu}>Home</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
+          {/* <a href="#leadership" onClick={closeMenu}>Hire Developers</a> */}
+          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
 
         <a href="#contact" className="quote-btn">
           Free Consultation
         </a>
 
-        <div
-          className={menuOpen ? "hamburger active" : "hamburger"}
+        <button
+          className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          {menuOpen ? <X size={30}/> : <Menu size={30}/>}
+        </button>
 
       </div>
     </header>

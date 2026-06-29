@@ -1,86 +1,364 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
 .footer{
-
-    background:#0f172a;
-
-    color:white;
-
-    padding-top:70px;
+    position: relative;
+    padding: 80px 8% 30px;
+    background: #060b16;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.08);
 }
 
-.footer-top{
+/* Glow */
 
-    width:90%;
+.footer::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    background:#00c8ff22;
+    border-radius:50%;
+    left:-180px;
+    top:-120px;
+    filter:blur(130px);
+}
 
-    max-width:1300px;
+.footer::after{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:380px;
+    background:#7c3aed22;
+    border-radius:50%;
+    right:-150px;
+    bottom:-150px;
+    filter:blur(140px);
+}
 
-    margin:auto;
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.footer-container{
+
+    position:relative;
+    z-index:2;
 
     display:grid;
 
-    grid-template-columns:2fr 1fr 1fr 1fr;
+    grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.2fr;
 
-    gap:40px;
+    gap:60px;
 
-    padding-bottom:50px;
 }
 
-.footer h2{
+/* ==========================================
+   COMPANY
+========================================== */
 
-    margin-bottom:20px;
+.company h2{
+
+    color:#fff;
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
 }
 
-.footer h3{
+.company p{
 
-    margin-bottom:20px;
+    color:#94a3b8;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    max-width:340px;
+
 }
 
-.footer p{
+/* ==========================================
+   COLUMNS
+========================================== */
 
-    color:#cbd5e1;
+.footer-column h3{
 
-    line-height:1.8;
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:24px;
+
 }
 
-.footer ul{
+.footer-column a,
+.footer-column span{
 
-    list-style:none;
-}
-
-.footer li{
-
-    margin-bottom:12px;
-
-    color:#cbd5e1;
-}
-
-.footer a{
-
-    color:#cbd5e1;
+    display:block;
 
     text-decoration:none;
+
+    color:#94a3b8;
+
+    margin-bottom:16px;
+
+    transition:.35s;
+
+    font-size:16px;
+
 }
 
-.footer a:hover{
+.footer-column a:hover{
 
-    color:white;
+    color:#00d4ff;
+
+    transform:translateX(6px);
+
+}
+
+.footer-column span:hover{
+
+    color:#fff;
+
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.footer-contact{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    color:#94a3b8;
+
+}
+
+.footer-contact svg{
+
+    color:#00d4ff;
+
+}
+
+/* ==========================================
+   SOCIAL
+========================================== */
+/* 
+.footer-social{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:28px;
+
+}
+
+.footer-social a{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    color:#fff;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-social a:hover{
+
+    background:#00c8ff;
+
+    color:#07111f;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 28px rgba(0,200,255,.35);
+
+} */
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.footer-bottom{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:70px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-size:15px;
+
+}
+
+.footer-bottom strong{
+
+    color:#00d4ff;
+
+}
+
+/* ==========================================
+   1200px
+========================================== */
+
+@media(max-width:1200px){
+
+.footer-container{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:50px;
+
+}
+
+.company p{
+
+max-width:100%;
+
+}
+
+}
+
+/* ==========================================
+   768px
+========================================== */
+
+@media(max-width:768px){
+
+.footer{
+
+padding:70px 6% 25px;
+
+}
+
+.footer-container{
+
+grid-template-columns:1fr;
+
+gap:45px;
+
+text-align:center;
+
+}
+
+.company p{
+
+margin:auto;
+
+}
+
+.footer-contact{
+
+justify-content:center;
+
+}
+
+.footer-social{
+
+justify-content:center;
+
+}
+
+.footer-column a:hover{
+
+transform:none;
+
 }
 
 .footer-bottom{
 
-    border-top:1px solid rgba(255,255,255,.1);
+margin-top:50px;
 
-    text-align:center;
-
-    padding:25px;
-
-    color:#94a3b8;
 }
 
-@media(max-width:900px){
+}
 
-.footer-top{
+/* ==========================================
+   480px
+========================================== */
 
-grid-template-columns:1fr;
+@media(max-width:480px){
+
+.footer{
+
+padding:60px 20px 20px;
+
+}
+
+.company h2{
+
+font-size:28px;
+
+}
+
+.company p{
+
+font-size:14px;
+
+}
+
+.footer-column h3{
+
+font-size:20px;
+
+}
+
+.footer-column a,
+.footer-column span{
+
+font-size:15px;
+
+}
+
+.footer-social{
+
+gap:12px;
+
+}
+
+.footer-social a{
+
+width:42px;
+height:42px;
+
+}
+
+.footer-bottom{
+
+font-size:13px;
 
 }
 

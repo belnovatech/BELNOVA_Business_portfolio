@@ -7,7 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 // import Leadership from "./components/Leadership/Leadership";
 import Portfolio from "./components/Portfilo/Portfolio";
-import HireDevelopers from "./components/HireDevelopers/HireDevelopers";
+// import HireDevelopers from "./components/HireDevelopers/HireDevelopers";
 function App() {
   return (
     <>
@@ -15,7 +15,7 @@ function App() {
       <Hero />
       <Services />
       <Portfolio/>
-      <HireDevelopers/>
+      {/* <HireDevelopers/> */}
       {/* <Leadership/> */}
       <About />
       {/* <WhyChooseUs /> */}
